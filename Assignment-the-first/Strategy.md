@@ -27,9 +27,9 @@ Should end up with 4 unknown, 3 matched (between 2 samples), and 2 hopped. 8 out
 Indices used:
 TAGCCATG / TAGCCATG - C9
 GCTACTCT / GCTACTCT - B2
-TAGNCANG / NANCCATG - C9
+TAGNCATG / NAGCCATG - C9
 CGATCGAT / TATGGCAC - Hopped (A5 / B7)
-CGATCGAT / TANGNCAC - Hopped (A5 / B7)
+CGATCGAT / TANGGCAC - Hopped (A5 / B7)
 ATGATCGA / ATGATCGA - Unknown (X)
 TCGAGAGT / ATGATCGA - Unknown (A10 / X)
 ATGATCGA / TGATGATC - Unknown (X / X)

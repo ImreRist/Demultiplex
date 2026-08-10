@@ -64,7 +64,7 @@ print(f'Running with {multiprocessing.cpu_count()} CPUs')
 out_path = '/projects/bgmp/imre/bioinfo/bi622/Demultiplex/Assignment-the-first/'
 if __name__ == '__main__':
     print('Main')
-    args_list = [(read1, out_path + 'read1_hist.png', 'Read 1'), (index1, out_path + 'index1_hist.png', 'Index 1'), (index2, 'index2_hist.png', 'Index 2'),(read2, 'read2_hist.png', 'Read 2')]
+    args_list = [(read1, out_path + 'read1_hist.png', 'Read 1'), (index1, out_path + 'index1_hist.png', 'Index 1'), (index2, out_path + 'index2_hist.png', 'Index 2'),(read2, out_path + 'read2_hist.png', 'Read 2')]
     pool = multiprocessing.Pool()
     print('Pool created')
     pool.map(average_quality_bar, args_list)
