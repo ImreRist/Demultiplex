@@ -84,10 +84,6 @@ def demultiplex(R1: str, R2: str, R3: str, R4: str, out_dir: str, index_set: set
             if counter % 36000000 == 0:
                 print(f'Processing record {counter}')
 
-            # if counter > 1: # DELETE AFTER TEST
-            #     break
-
-
             counter += 1
 
             record_1 = ''
@@ -115,18 +111,9 @@ def demultiplex(R1: str, R2: str, R3: str, R4: str, out_dir: str, index_set: set
             index_1_corrected = index_1 if index_1 in index_set else correct_seq(index_1, index_set)
             index_2_corrected = index_2 if index_2 in index_set else correct_seq(index_2, index_set)
 
-            # print(f'Index 1: {index_1}')
-            # print(f'Index 1 Corrected: {index_1_corrected}')
-            # print(f'Index 2: {index_2}')
-            # print(f'Index 2 Corrected: {index_1_corrected}')
-            # print(f'Quality 1: {bioinfo.qual_score(qscore_1)}')
-            # print(f'Quality 2: {bioinfo.qual_score(qscore_2)}')
-            # print(f'Score 1: {qscore_1}')
-            # print(f'Score 2: {qscore_1}')
             if index_1_corrected == '' or index_2_corrected == '' or bioinfo.qual_score(qscore_1) < qual_cutoff or bioinfo.qual_score(qscore_2) < qual_cutoff:
                 # If correction didn't work or one of the indices has average quality below the cutoff
                 # Add indices to headers and write records to unknown files:
-                # print('Unknown')
                 u1.write(record_1.replace('\n', f' {index_1}-{index_2}\n', 1))
                 u2.write(record_2.replace('\n', f' {index_1}-{index_2}\n', 1))
                 unknown_count += 1
