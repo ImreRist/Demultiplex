@@ -65,3 +65,5 @@ Created [demultiplex.py](demultiplex.py) in accordance with pseudocode outlined 
 Tested `demultiplex.py` using test files. Initially failed because the R3 test files had the forward indices, not the reverse complements. One of the records that was supposed to be hopped was unknown because its quality score was below the threshold, which I didn't account for when I made the tests. Other than that the records went where they were supposed to.
 
 Ran `demultiplex.py` with `run_demultiplex.sh` using a quality cutoff of 25. Output is in `/scratch/bgmp/imre/demux` on Talapas. Finished in ~37 minutes, used 82% of one CPU, and had a maximum RAM usage of ~250 MB. Copied `summary.tsv` to `Assignment-the-third/`.
+
+Created `process_data.py` and ran with `summary.tsv` to make a markdown file that summarizes general stats and has a plot of the percentage of reads assigned to each sample. Saved to [results.md](results.md)
